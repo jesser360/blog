@@ -4,7 +4,13 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
+    @posts = Post.all
+  end
+
+  # GET /[section]
+  def subsection
     @posts = Post.where(section: params[:section])
+
   end
 
   # GET /posts/1
